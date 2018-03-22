@@ -1,0 +1,14 @@
+<h1>Welcome to Chat House</h1>
+<div class='row'>
+	<label class="col-sm-2">Create user:</label>
+	<input name='name' class="col-sm-4"></input>
+	<div class="col-sm-1"></div>
+	<%= link_to '<button class="col-sm-2" type="button">New User</button>'.html_safe, user_create_path, method: :post %>
+</div>
+<p></p>
+<div class='row'>
+	<label class="col-sm-2">Login:</label>
+	<input class="col-sm-4" name='name'></input>
+	<div class="col-sm-1"></div>
+	<%= link_to '<button type="button" class="col-sm-1">Login</button>'.html_safe, user_login_path %>
+</div>

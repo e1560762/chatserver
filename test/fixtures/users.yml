@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  is_login: false
+  last_connected_time: 2018-03-21 18:37:39
+  last_connected_ip: MyString
+
+two:
+  username: MyString
+  is_login: false
+  last_connected_time: 2018-03-21 18:37:39
+  last_connected_ip: MyString
