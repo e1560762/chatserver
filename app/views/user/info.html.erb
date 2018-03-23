@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="col-md-8">
+		<div class="row">
+			<div class="col-md-6">
+				<%= collection_select :post, :room_id, @rooms.order(:name), :name, :name, include_blank: true %>
+			</div>
+			<div class="col-md-6">
+      			<%= link_to '<button type="button">Enter to a room</button>'.html_safe, room_enter_path %>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<%= link_to '<button type="button">Create Room</button>'.html_safe, room_new_path %>
+	</div>
+</div>
