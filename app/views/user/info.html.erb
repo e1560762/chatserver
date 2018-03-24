@@ -13,3 +13,9 @@
 		<%= link_to '<button type="button">Create Room</button>'.html_safe, room_new_path %>
 	</div>
 </div>
+<script type="text/javascript">
+	function subscribeForRoom(elem) {
+		room = $('#post_room_id').find('option:selected').val();
+		MakeMessageChannel(room);
+	}
+</script>

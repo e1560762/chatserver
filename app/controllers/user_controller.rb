@@ -16,6 +16,7 @@ class UserController < ApplicationController
   			@user.last_connected_time = Time.now
 			  @user.last_connected_ip = request.remote_ip
   			@user.save
+        cookies.signed[:user_id] = @user.id
   			redirect_to user_info_path(@user.id)
   		else
   			flash[:error] = "User already exists. Choose a new name or login."
@@ -30,6 +31,7 @@ class UserController < ApplicationController
   			redirect_to room_new_url
   		end
   		@user.update(is_login: true, last_connected_time: Time.now, last_connected_ip: request.remote_ip)
+      cookies.signed[:user_id] = @user.id
   		redirect_to user_info_path(@user.id)
   	end
 

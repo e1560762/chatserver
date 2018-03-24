@@ -29,6 +29,15 @@ class RoomController < ApplicationController
   				r.name = params[:name]
   			end
   		end
+      session[:room] = @room.name
   		redirect_to room_chat_path(@room.name_as_hash)
   	end
+
+    def send_message
+      ActionCable.server.broadcast(
+        "chat_channel_#{session[:room]}",
+        sent_by: current_user.username,
+        body: params[:message]
+      )
+    end
 end

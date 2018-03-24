@@ -1,1 +1,10 @@
 <h1>Welcome to <%= @name %> </h1>
+<input id="rname", type="hidden", value="<%= @name %>"></input>
+<div class="row">
+	<div class="col-xs-8" id="messages"></div>
+	<%= form_with url: room_send_message_path, remote: true, id: "sent_message", class: "col-xs-4" do |f| %>
+		<%= f.label 'Message' %>
+		<%= f.text_field :message %>
+		<%= f.button 'Send', remote: true %>
+	<% end %>
+</div>

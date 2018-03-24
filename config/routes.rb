@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   	post 'room/create', to: 'room#create'
   	get 'room/chat/:name', to: 'room#chat', as: "room_chat"
   	get 'room/enter', to: 'room#enter'
+    post 'room/send_message', to: 'room#send_message', as: 'room_send_message'
 
   	#user
   	get 'user/index', to: 'user#index'
